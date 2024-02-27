@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'London.otf';
+  font-family: 'London';
     src: url('assets/assets/London.otf-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -9,7 +9,7 @@ body {
   margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'London.otf', sans-serif;
+    font-family: 'London', sans-serif;
 }
 
 #splash-page {
