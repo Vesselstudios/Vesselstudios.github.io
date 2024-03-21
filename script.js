@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to update position periodically for the flicker effect
     setInterval(function () {
       setRandomPosition(diagramImg);
-    }, 7000); // Adjust the interval as needed for the flicker speed
+    }, 4000); // Adjust the interval as needed for the flicker speed
   });
   
 
-    // Start the animation with a 20-second interval between position changes
-    setInterval(setRandomPosition, 20000);
+    // Start the animation with a 4-second interval between position changes
+    setInterval(setRandomPosition, 4000);
 
   function setRandomPosition(element) {
     const halfWidth = element.offsetWidth / 2;
@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
     element.style.left = `${randomX}px`;
     element.style.top = `${randomY}px`;
   }
-  
-  // Function to play audio
+
+// Function to play audio
   function playAudio() {
     var audio = document.getElementById('splash-page-audio');
     // Play audio if it's not already playing
@@ -42,3 +42,5 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Add click event listener to the whole document
   document.addEventListener('click', playAudio);
+
+  

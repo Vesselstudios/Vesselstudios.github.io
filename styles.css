@@ -30,6 +30,11 @@ video {
   animation: flicker 7s infinite alternate;
 }
 
+.paused {
+    animation-play-state: paused;
+}
+
+
 
 #diagram-overlay img {
 <<<<<<< HEAD
@@ -53,7 +58,7 @@ video {
     width: 100%;
   text-align: center;
     color: rgb(34, 29, 3);
-    font-size: 18px;
+    font-size: 24px;
     padding: 20px 0;
     /* Adds some padding at the bottom */
     letter-spacing: 4px; /* Adjust the letter-spacing to add space between words */
@@ -68,28 +73,22 @@ video {
 }
 
 
+@keyframes flicker {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
 #diagram-overlay img {
     max-width: 100%;
     max-height: 100vh;
     position: absolute;
-    animation: flicker 7s infinite; /* Adjust the duration as needed */
+    animation: flicker 3s ease-in-out infinite; /* Adjust the duration as needed */
     transform: scale(0.4); /* Scale the image to 50% */
 }
-
-@keyframes flicker {
-    0%, 100% {
-        opacity: 0.8;
-    }
-
-    3%, 10%, 17%, 24%, 31%, 38%, 45%, 52%, 59%, 66%, 73%, 80%, 87%, 94% {
-        opacity: 0.2;
-    }
-
-    6%, 13%, 20%, 27%, 34%, 41%, 48%, 55%, 62%, 69%, 76%, 83%, 90%, 97% {
-        opacity: 0.8;
-    }
-}
-
 
 
 
