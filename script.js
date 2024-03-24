@@ -1,33 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
     const diagramImg = document.getElementById("diagram-img");
-  
+
     // Function to update position periodically for the flicker effect
     setInterval(function () {
-      setRandomPosition(diagramImg);
-    }, 4000); // Adjust the interval as needed for the flicker speed
-  });
-  
+        // Hide the image
+        diagramImg.style.display = "none";
+        
+        // Pause for 5 seconds
+        setTimeout(function() {
+            // Show the image after the pause
+            diagramImg.style.display = "block";
+            
+            // Set random position
+            setRandomPosition(diagramImg);
+        }, 5000);
+    }, 7000); // Adjust the interval as needed for the flicker speed
+});
 
-    // Start the animation with a 4-second interval between position changes
-    setInterval(setRandomPosition, 4000);
-
-  function setRandomPosition(element) {
+function setRandomPosition(element) {
     const halfWidth = element.offsetWidth / 2;
     const halfHeight = element.offsetHeight / 2;
   
-    // Adjust maxX and maxY to consider the center of the element
-    // This allows the center point to stay on screen but lets edges go off-screen
-    const maxX = window.innerWidth - halfWidth; // Adjust to keep the center within the viewport
-    const maxY = window.innerHeight - halfHeight; // Adjust to keep the center within the viewport
+    const maxX = window.innerWidth - halfWidth;
+    const maxY = window.innerHeight - halfHeight;
   
-    // Calculate random positions for the center of the element
     const randomX = Math.floor(Math.random() * maxX) - halfWidth;
     const randomY = Math.floor(Math.random() * maxY) - halfHeight;
   
-    element.style.position = "absolute"; // Ensure the element is positioned absolutely
+    element.style.position = "absolute";
     element.style.left = `${randomX}px`;
     element.style.top = `${randomY}px`;
-  }
+}
+
 
 // Function to play audio
   function playAudio() {
