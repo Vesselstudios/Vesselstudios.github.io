@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Accuratist';
-    src: url('assets/Accuratist.otf') format('truetype');
+  font-family: 'Quicksand-Light';
+    src: url('assets/Quicksand-Light.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@ body {
   margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'Accuratist', sans-serif;
+    font-family: 'Quicksand-Light', sans-serif;
 }
 
 #splash-page {
