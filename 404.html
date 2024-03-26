@@ -8,23 +8,28 @@
         body {
             background-color: rgb(250, 0, 0); /* Set background color */
             color: rgb(7, 7, 7); /* Set text color */
-            font-family: SourceCodePro-ExtraLight, sans-serif; /* Set font family */
+            font-family: assets/SourceCodePro-ExtraLight.otf, sans-serif; /* Set font family */
             font-size: 18px; /* Set font size */
             text-align: center; /* Center align text */
         }
         #diagram-img {
-            max-width: 50%;
+            max-width: 33%;
             height: auto;
+            display: block; /* Center the image */
+            margin: 0 auto; /* Center the image */
         }
-        #error-message {
+        #error-message-top {
+            margin-top: 50px; /* Add some top margin */
+        }
+        #error-message-bottom {
             margin-top: 20px; /* Add some top margin */
+            margin-bottom: 50px; /* Add some bottom margin */
         }
     </style>
 </head>
 <body>
-    <p>Solarpractices.org is a solar powered website.</p>
+    <p id="error-message-top">solarpractices.org is a solar powered website.</p>
     <img src="assets/HeliotechnicsDiagramTransparent.png" alt="Error Image" id="diagram-img">
-    <p id="error-message">It is currently offline due to decreased solar activity at the local server site.</p>
+    <p id="error-message-bottom">It is currently offline due to decreased solar activity at the local server site.</p>
 </body>
 </html>
-
