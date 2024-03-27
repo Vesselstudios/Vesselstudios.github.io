@@ -20,16 +20,27 @@ document.addEventListener("DOMContentLoaded", function () {
 function setRandomPosition(element) {
     const halfWidth = element.offsetWidth / 2;
     const halfHeight = element.offsetHeight / 2;
-  
+    
     const maxX = window.innerWidth - halfWidth;
     const maxY = window.innerHeight - halfHeight;
-  
-    const randomX = Math.floor(Math.random() * maxX) - halfWidth;
-    const randomY = Math.floor(Math.random() * maxY) - halfHeight;
+    
+    let randomX, randomY;
+    const MIN_DISTANCE = 600; // Minimum distance between positions
+
+    do {
+        randomX = Math.floor(Math.random() * maxX) - halfWidth;
+        randomY = Math.floor(Math.random() * maxY) - halfHeight;
+    } while (distance(element.offsetLeft, element.offsetTop, randomX, randomY) < MIN_DISTANCE);
+
+
   
     element.style.position = "absolute";
     element.style.left = `${randomX}px`;
     element.style.top = `${randomY}px`;
+}
+
+function distance(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
 
