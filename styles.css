@@ -101,10 +101,10 @@ video {
     transform: scale(0.4); /* Scale the image to 50% */
 }
 
-#bottom-right-image {
+#bottom-left-image {
     position: fixed;
     bottom: 0;
-    right: 0;
+    left: 0; /* Position on the bottom left */
     width: 100px; /* Adjust width as needed */
     height: auto; /* Automatically adjust height */
     z-index: 9999; /* Ensure the image stays on top of other content */

@@ -44,18 +44,25 @@ function distance(x1, y1, x2, y2) {
 }
 
 
-// Function to play audio
-  function playAudio() {
+  
+// Define the function to play or pause audio on click
+function toggleAudio() {
     var audio = document.getElementById('splash-page-audio');
-    // Play audio if it's not already playing
+    // Check if audio is paused
     if (audio.paused) {
-      audio.play();
+        audio.play(); // If paused, play audio
+    } else {
+        audio.pause(); // If playing, pause audio
+        audio.currentTime = 0; // Reset audio playback to start
     }
-    // Remove the event listener after the audio starts playing
-    document.removeEventListener('click', playAudio);
-  }
-  
-  // Add click event listener to the whole document
-  document.addEventListener('click', playAudio);
+}
 
-  
+// Add click event listener to the whole document
+var clickCount = 0; // Variable to track click count
+document.addEventListener('click', function() {
+    clickCount++; // Increment click count on each click
+    if (clickCount == 2) { // If click count is 2
+        toggleAudio(); // Call toggleAudio function
+        clickCount = 0; // Reset click count
+    }
+});
