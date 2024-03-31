@@ -5,30 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error Page</title>
     <style>
-        body {
-            background-color: rgb(250, 0, 0); /* Set background color */
-            color: rgb(249, 246, 246); /* Set text color */
-            font-family: SourceCodePro-ExtraLight, sans-serif; /* Set font family */
-            font-size: 18px; /* Set font size */
-            text-align: center; /* Center align text */
-            display: flex; /* Use flexbox for vertical alignment */
-            flex-direction: column; /* Align items vertically */
-            justify-content: center; /* Center content vertically */
-            height: 100vh; /* Make body take full viewport height */
-        }
+     body {
+    background-color: rgb(250, 0, 0); /* Set background color */
+    color: rgb(249, 246, 246); /* Set text color */
+    font-family: SourceCodePro-ExtraLight, sans-serif; /* Set font family */
+    font-size: 18px; /* Set font size */
+    text-align: center; /* Center align text */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center content vertically */
+    height: 100vh; /* Make body take full viewport height */
+}
 
-        #diagram-img {
-            max-width: 33%;
+#diagram-img {
+            max-width: 16.5%;
             height: auto;
             display: block; /* Center the image */
             margin: 0 auto; /* Center the image */
         }
         #error-message-top {
             margin-top: 20vh; /* Adjust top margin */
+            margin-bottom: 17vh; /* Remove bottom margin */
         }
         #error-message-bottom {
+            margin-top: 17vh; /* Remove top margin */
             margin-bottom: 20vh; /* Adjust bottom margin */
         }
+
+
     </style>
 </head>
 <body>
@@ -37,3 +41,5 @@
     <p id="error-message-bottom">It is currently offline due to decreased solar activity at the local server site.</p>
 </body>
 </html>
+
+
