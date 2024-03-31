@@ -32,8 +32,6 @@ function setRandomPosition(element) {
         randomY = Math.floor(Math.random() * maxY) - halfHeight;
     } while (distance(element.offsetLeft, element.offsetTop, randomX, randomY) < MIN_DISTANCE);
 
-
-  
     element.style.position = "absolute";
     element.style.left = `${randomX}px`;
     element.style.top = `${randomY}px`;
@@ -43,34 +41,7 @@ function distance(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
-
-  
 // Define the function to play or pause audio on click
-function toggleAudio() {
-    var audio = document.getElementById('splash-page-audio');
-    // Check if audio is paused
-    if (audio.paused) {
-        audio.play(); // If paused, play audio
-    } else {
-        audio.pause(); // If playing, pause audio
-        audio.currentTime = 0; // Reset audio playback to start
-    }
-}
-
-// Add click event listener to the whole document
-var clickCount = 0; // Variable to track click count
-document.addEventListener('click', function() {
-    clickCount++; // Increment click count on each click
-    if (clickCount == 1) { // If click count is 1
-        toggleAudio(); // Call toggleAudio function
-        clickCount = 0; // Reset click count
-    }
-});
-
-
-
-
-// Function to play or pause audio on click
 function toggleAudio() {
     var audio = document.getElementById('splash-page-audio');
     var playIcon = document.getElementById('play-icon');
@@ -85,3 +56,31 @@ function toggleAudio() {
         playIcon.setAttribute('fill', 'none'); // Change fill color of triangle back to transparent
     }
 }
+
+// Add click event listener to the whole document
+var clickCount = 0; // Variable to track click count
+document.addEventListener('click', function() {
+    clickCount++; // Increment click count on each click
+    if (clickCount == 1) { // If click count is 1
+        toggleAudio(); // Call toggleAudio function
+        clickCount = 0; // Reset click count
+    }
+});
+
+// Set the position of the diagram image
+const diagramImg = document.getElementById("diagram-img");
+const viewportWidth = window.innerWidth;
+const viewportHeight = window.innerHeight;
+const diagramWidth = diagramImg.offsetWidth;
+const diagramHeight = diagramImg.offsetHeight;
+
+// Calculate position
+const posX = viewportWidth - diagramWidth;
+const posY = viewportHeight - diagramHeight;
+
+// Set position
+diagramImg.style.position = "absolute";
+diagramImg.style.left = posX + "px";
+diagramImg.style.top = posY + "px";
+
+

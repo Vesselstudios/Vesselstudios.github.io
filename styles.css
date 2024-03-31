@@ -27,7 +27,7 @@ video {
   max-width: 50%;
   max-height: 100vh;
   position: absolute;
-  animation: flicker 7s infinite alternate;
+  animation: flicker 2.5s infinite alternate;
 }
 
 .paused {
@@ -37,18 +37,15 @@ video {
 
 
 #diagram-overlay img {
-<<<<<<< HEAD
   width: 40%;
     opacity: 0.8;
-    animation: flicker 1s infinite alternate;
-=======
+    animation: flicker 2.5s infinite alternate;
   max-width: 50%;
     /* Prevents the image from being too large */
     max-height: 100vh;
     /* Prevents the image from being too tall */
     position: absolute;
     /* Allows for absolute positioning within diagram-overlay */
->>>>>>> 64db2c06ee5ea0ffa93cd14d7525f1987a642b25
 }
 
 
@@ -95,7 +92,7 @@ video {
     max-width: 100%;
     max-height: 100vh;
     position: absolute;
-    animation: fadeInOut 0.5s ease-in-out, flicker 6s steps(1, start) 0.5s infinite; /* Adjust duration as needed */
+    animation: fadeInOut 0.5s ease-in-out, flicker 1.5s steps(1, start) 0.5s infinite; /* Adjust duration as needed */
     transform: scale(0.4); /* Scale the image to 50% */
     animation-delay: 0.5s; /* Delay flicker animation to synchronize with fadeInOut */
     animation-fill-mode: both; /* Ensure the final state of the fadeInOut animation persists */
@@ -114,7 +111,22 @@ video {
 
 
 
-/* CSS for changing arrow color when audio is on */
-#bottom-left-image.playing #play-icon path {
-    fill: #000; /* Change fill color to black when audio is playing */
+/#bottom-left-image {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 9999;
 }
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#diagram-img {
+    margin-left: auto;
+    margin-top: auto;
+}
+
