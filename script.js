@@ -61,8 +61,27 @@ function toggleAudio() {
 var clickCount = 0; // Variable to track click count
 document.addEventListener('click', function() {
     clickCount++; // Increment click count on each click
-    if (clickCount == 2) { // If click count is 2
+    if (clickCount == 1) { // If click count is 1
         toggleAudio(); // Call toggleAudio function
         clickCount = 0; // Reset click count
     }
 });
+
+
+
+
+// Function to play or pause audio on click
+function toggleAudio() {
+    var audio = document.getElementById('splash-page-audio');
+    var playIcon = document.getElementById('play-icon');
+    
+    // Check if audio is paused
+    if (audio.paused) {
+        audio.play(); // If paused, play audio
+        playIcon.setAttribute('fill', '#000'); // Change fill color of triangle to black
+    } else {
+        audio.pause(); // If playing, pause audio
+        audio.currentTime = 0; // Reset audio playback to start
+        playIcon.setAttribute('fill', 'none'); // Change fill color of triangle back to transparent
+    }
+}
