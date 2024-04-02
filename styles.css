@@ -130,3 +130,11 @@ video {
     margin-top: auto;
 }
 
+#bottom-left-image {
+    position: fixed;
+    bottom: 7px; /* Adjust the bottom distance as needed */
+    left: 17px; /* Adjust the left distance as needed */
+    cursor: pointer;
+    z-index: 9999; /* Ensure the image stays on top of other content */
+    transform: translate(-5px, -5px); /* Move the SVG up and to the left */
+}
