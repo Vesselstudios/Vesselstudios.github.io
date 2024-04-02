@@ -14,28 +14,39 @@ document.addEventListener("DOMContentLoaded", function () {
             // Set random position
             setRandomPosition(diagramImg);
         }, 5000);
-    }, 7000); // Adjust the interval as needed for the flicker speed
+    }, 5000); // Adjust the interval as needed for the flicker speed
 });
 
 function setRandomPosition(element) {
-    const halfWidth = element.offsetWidth / 2;
-    const halfHeight = element.offsetHeight / 2;
-    
-    const maxX = window.innerWidth - halfWidth;
-    const maxY = window.innerHeight - halfHeight;
-    
-    let randomX, randomY;
-    const MIN_DISTANCE = 600; // Minimum distance between positions
+  const halfWidth = (element.offsetWidth * 0.5) / 2;
+  const halfHeight = (element.offsetHeight * 0.5) / 2;
 
-    do {
-        randomX = Math.floor(Math.random() * maxX) - halfWidth;
-        randomY = Math.floor(Math.random() * maxY) - halfHeight;
-    } while (distance(element.offsetLeft, element.offsetTop, randomX, randomY) < MIN_DISTANCE);
+  // Adjusted to consider the entire screen width and height
+  const maxX = window.innerWidth - (element.offsetWidth * 0.6); // Full width considered of scaled image
+  const maxY = window.innerHeight - (element.offsetHeight * 0.6); // Full height considered of scaled image
 
-    element.style.position = "absolute";
-    element.style.left = `${randomX}px`;
-    element.style.top = `${randomY}px`;
+  console.log(`window.innerHeight: ${window.innerHeight}, window.innerWidth: ${window.innerWidth}`);
+  console.log(`element.offsetHeight: ${element.offsetHeight}, element.offsetWidth: ${element.offsetWidth}`);
+  console.log(`maxX: ${maxX}, maxY: ${maxY}`);
+
+  let randomX, randomY;
+  const MIN_DISTANCE = 200; // Minimum distance between positions
+
+  do {
+    // Generate random positions based on the full possible range
+    randomX = Math.floor(Math.random() * (maxX + 201)) - 200;
+    randomY = Math.floor(Math.random() * (maxY + 201)) - 200;
+
+    console.log(`Trial - randomX: ${randomX}, randomY: ${randomY}`); // Log trial values
+  } while (distance(element.offsetLeft, element.offsetTop, randomX, randomY) < MIN_DISTANCE);
+
+  console.log(`Final - randomX: ${randomX}, randomY: ${randomY}`); // Log final values chosen
+
+  element.style.position = "absolute";
+  element.style.left = `${randomX}px`;
+  element.style.top = `${randomY}px`;
 }
+
 
 function distance(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));

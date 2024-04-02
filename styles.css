@@ -23,13 +23,6 @@ video {
     object-fit: cover;
 }
 
-#diagram-overlay img {
-  max-width: 50%;
-  max-height: 100vh;
-  position: absolute;
-  animation: flicker 2.5s infinite alternate;
-}
-
 .paused {
     animation-play-state: paused;
 }
@@ -96,38 +89,14 @@ video {
     transform: scale(0.4); /* Scale the image to 50% */
     animation-delay: 0.5s; /* Delay flicker animation to synchronize with fadeInOut */
     animation-fill-mode: both; /* Ensure the final state of the fadeInOut animation persists */
-}
-
-
-#bottom-left-image {
-    position: fixed;
-    bottom: 0;
-    left: 0; /* Position on the bottom left */
-    width: 50px; /* Adjust width as needed */
-    height: auto; /* Adjust height as needed */
-    cursor: pointer;
-    z-index: 9999; /* Ensure the image stays on top of other content */
-}
-
-
-
-/#bottom-left-image {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    cursor: pointer;
-    z-index: 9999;
+    margin-left: auto;
+      margin-top: auto;
 }
 
 .container {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-}
-
-#diagram-img {
-    margin-left: auto;
-    margin-top: auto;
 }
 
 #bottom-left-image {
