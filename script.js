@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Set random position
             setRandomPosition(diagramImg);
         }, 5000);
-    }, 5000); // Adjust the interval as needed for the flicker speed
+    }, 7000); // Adjust the interval as needed for the flicker speed
 });
 
 function setRandomPosition(element) {

@@ -35,6 +35,27 @@
             <p>< about >    </p>
     </div>
     <script src="script.js"></script> <!-- You can define your scripts in a separate JS file -->
+
+    <script>
+        const diagramImg = document.getElementById("diagram-img");
+    
+        function pauseAndResumeAnimation() {
+            diagramImg.classList.add("paused"); // Add a class to pause the animation
+    
+            setTimeout(function () {
+                diagramImg.classList.remove("paused"); // Remove the class to resume the animation after 7 seconds
+                pauseAndResumeAnimation(); // Repeat the process for the next cycle
+            }, 7000); // 7 seconds pause
+        }
+    
+        pauseAndResumeAnimation(); // Start the process initially
+    </script>
+    
+
+    
+    
+    
+    
 </body>
 </html>
 
