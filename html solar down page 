@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Page</title>
+    <style>
+        body {
+            background-color: rgb(250, 0, 0); /* Set background color */
+            color: rgb(7, 7, 7); /* Set text color */
+            font-family: SourceCodePro-ExtraLight, sans-serif; /* Set font family */
+            font-size: 18px; /* Set font size */
+            text-align: center; /* Center align text */
+        }
+        #diagram-img {
+            max-width: 100%;
+            height: auto;
+        }
+        #error-message {
+            margin-top: 20px; /* Add some top margin */
+        }
+    </style>
+</head>
+<body>
+    <p>Solarpractices.org is a solar powered website. It is currently offline due to decreased solar activity at the local server site.</p>
+    <img src="error-image.jpg" alt="Error Image" id="diagram-img">
+    <p id="error-message">Solarpractices.org is a solar powered website. It is currently offline due to decreased solar activity at the local server site.</p>
+</body>
+</html>
