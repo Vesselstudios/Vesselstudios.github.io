@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error Page</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
      body {
     background-color: rgb(250, 0, 0); /* Set background color */
     color: rgb(249, 245, 245); /* Set text color */
-    font-family: SourceCodePro-ExtraLight, sans-serif; /* Set font family */
+    font-family: assets/SourceCodePro-ExtraLight.otf, sans-serif; /* Set font family */
     font-size: 18px; /* Set font size */
     text-align: center; /* Center align text */
     display: flex; /* Use flexbox for vertical alignment */
@@ -17,8 +18,10 @@
     height: 100vh; /* Make body take full viewport height */
 }
 
-#diagram-img {
-            max-width: 16.5%;
+
+#d-img {
+    
+            max-width: 12.4%;
             height: auto;
             display: block; /* Center the image */
             margin: 0 auto; /* Center the image */
@@ -37,7 +40,7 @@
 </head>
 <body>
     <p id="error-message-top">solarpractices.org is a solar powered website.</p>
-    <img src="assets/HeliotechnicsDiagramTransparent white 3.png" alt="Error Image" id="diagram-img">
+    <img src="assets/HeliotechnicsDiagramTransparent white 3.png" alt="Error Image" id="d-img">
     <p id="error-message-bottom">It is currently offline due to decreased solar activity at the local server site.</p>
 </body>
 </html>
