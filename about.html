@@ -7,7 +7,7 @@
     <style>
         @font-face {
             font-family: 'SourceCodePro-ExtraLight';
-            src: url('assets/SourceCodePro-ExtraLight.otf') format('truetype'); /* Adjust the font file format if necessary */
+            src: url('assets/SourceCodePro-ExtraLight.otf') format('truetype');
         }
 
         body {
@@ -19,94 +19,87 @@
             background-position: center;
             color: rgb(251, 247, 247);
             display: flex;
-            flex-direction: column;
             min-height: 100vh;
             position: relative;
-        }
-
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(6, 6, 6, 0.504);
-            z-index: 0;
+            overflow: hidden;
         }
 
         .content {
-            padding-top: 1px; /* Adjust the padding-top value to move .section-1 closer to the top */
             padding: 20px;
-            position: relative;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            max-width: 485px;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow-y: auto;
             z-index: 1;
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5);
         }
 
         .section {
-            margin: 20px auto;
-            text-align: center;
-            z-index: 1;
-            width: 50%;
-            box-sizing: border-box;
+            margin: 20px;
         }
-
-        .section-1, .section-2 {
-            align-self: center; /* Align both sections to the center */
-            width: 95%; /* Set the width to 75% */
-        }
-
-
-        .section-1 {
-             align-self: flex-start;
-             margin-top: 0;
-             width: 95%; /* Reduce width by 25% */
-        }
-
-        .section-2 {
-    position: fixed; /* Position the section fixed */
-    bottom: 20px; /* Adjust the distance from the bottom */
-    left: 50%; /* Move the section to the center horizontally */
-    transform: translateX(-50%); /* Center the section horizontally */
-    width: 95%; /* Set the width */
-    z-index: 1; /* Ensure section-2 is above other elements */
-}
-
-
-.section-3 {
-    padding: 15px;
-    position: fixed;
-    top: 45%;
-    transform: translateY(-50%);
-    right: 0;
-    max-width: 485px;
-    z-index: 1;
-}
-
-
 
         h1 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: italic;
             margin-bottom: 10px;
+            text-align: left;
         }
 
         p {
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.6;
+            text-align: left;
+        }
+
+        .people-list p {
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: left;
+            margin: 0;
+            position: relative;
+        }
+
+        .people-list p:not(:first-child) {
+            margin-top: 10px;
         }
 
         .footer-image {
-    position: fixed; /* Position the image relative to the viewport */
-    bottom: 0; /* Align the image to the bottom of the viewport */
-    left: 50%; /* Move the image to the center horizontally */
-    transform: translateX(-50%); /* Center the image horizontally */
-    width: 50px; /* Adjust the width of the image */
-    height: auto; /* Maintain aspect ratio */
-}
+            width: 50px;
+            height: auto;
+            display: block;
+            margin: 20px auto 0;
+        }
 
+        .centered-text {
+            text-align: center;
+            margin-top: 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+            padding: 10px 0;
+            font-size: 24px;
+        }
+
+        .non-link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .non-link:visited {
+            color: black;
+        }
     </style>
 </head>
 <body>
+    <div class="centered-text">
+        <a class="non-link">&lt;</a> <!-- Replace 'about.html' with the path to your about page -->
+        <a href="about.html" class="non-link">about</a> <!-- Replace 'about.html' with the path to your about page -->
+        <a class="non-link"> &gt;</a> <!-- Replace 'about.html' with the path to your about page -->
+    </div>
     <div class="content">
         <div class="section section-1">
             <p>The Heliotechnics/Heliotechniques Institute for the Study of Solar Practices explores new ways of thinking about energetic entities, such as petroleum, whale oil, electricity, and the sun to decenter anthropocentric representations of nature, culture, and technology. The Institute takes a pluralistic approach to meaning making, providing critical and creative inquiries that pose a very basic question: why do Western humans presume that because energetic entities exist, they should be put to work for human economic productive means?</p>
@@ -114,22 +107,20 @@
         </div>
         <div class="section section-2">
             <p>Solar practices explore relations as practices that create alternative conceptualizations of meaning making, knowledge production, media, communication, community, agencies, and beings-together that challenge anthropocentrism. Solar practices does not distinguish between the practices of different entities, and does not assume (Western, English-speaking) human representations are the correct, universal, descriptions of life. Instead, it constructs meaning through relations.</p>
-        <p>The Heliotechnics/Heliotechniques Institute for the Study of Solar Practices is supported by The New York State Council on the Arts Artist Support Grant, The Buffalo Institute for Contemporary Art Generator Fund, with sponsorship from Wave Farm, and co-sponsorship from Gray Area for the Arts, the Center for Emotional Materiality, and the Department of Media Study University at Buffalo, SUNY.</p>
+            <p>The Heliotechnics/Heliotechniques Institute for the Study of Solar Practices is supported by The New York State Council on the Arts Artist Support Grant, The Buffalo Institute for Contemporary Art Generator Fund, with sponsorship from Wave Farm, and co-sponsorship from Gray Area for the Arts, the Center for Emotional Materiality, and the Department of Media Study University at Buffalo, SUNY.</p>
         </div>
-        <div class="section section-3">
+        <div class="section section-3 people-list">
             <h1>People:</h1>
-            <ul>
-                <li>Dr. Elia Vargas, director</li>
-                <li>James Pardue, solar server designer</li>
-                <li>Chris Michael, coordinator</li>
-                <li>Amber Manto, heliotechnician</li>
-                <li>Giuliano Gati, heliotechnician</li>
-                <li>Dr. Abigail Cooke, solar survey co-designer</li>
-                <li>Dr. Christina Corfield, community support</li>
-                <li>Sierra Vargas, website designer</li>
-            </ul>
+            <p>Dr. Elia Vargas, director</p>
+            <p>James Pardue, solar server designer</p>
+            <p>Chris Michael, coordinator</p>
+            <p>Amber Manto, heliotechnician</p>
+            <p>Giuliano Gati, heliotechnician</p>
+            <p>Dr. Abigail Cooke, solar survey co-designer</p>
+            <p>Dr. Christina Corfield, community support</p>
+            <p>Sierra Vargas, website designer</p>
         </div>
+        <img src="assets/FY2024_Grantee_Graphic.png" alt="Bottom Image" class="footer-image">
     </div>
-    <img src="assets/FY2024_Grantee_Graphic.png" alt="Bottom Image" class="footer-image">
 </body>
 </html>
