@@ -24,15 +24,25 @@
             overflow: hidden;
         }
 
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.39); /* Slightly lighter overlay */
+            z-index: 0; /* Ensure it is behind the content */
+        }
+
         .content-left {
-            padding: 0px;
+            padding: 20px;
             position: fixed;
             left: 0;
             top: 0;
             bottom: 0;
             width: 50%;
             max-width: 485px;
-            background-color: rgba(0, 0, 0, 0.7);
             overflow-y: auto;
             z-index: 1;
         }
@@ -44,7 +54,6 @@
             top: 47%;
             transform: translateY(-50%);
             max-width: 475px;
-            background-color: rgba(0, 0, 0, 0.7);
             z-index: 1;
         }
 
