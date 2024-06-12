@@ -32,6 +32,25 @@ function setRandomPosition(element) {
   let randomX, randomY;
   const MIN_DISTANCE = 200; // Minimum distance between positions
 
+      // Random page navigation
+      const randomPageLinks = document.querySelectorAll(".centered-text a.non-link");
+
+      // List of random page URLs
+      const randomPages = [
+          "404.html",
+          "about.html",
+          "shea.html",
+      ];
+  
+      randomPageLinks.forEach(function(link) {
+          link.addEventListener("click", function(event) {
+              event.preventDefault();
+              const randomPage = randomPages[Math.floor(Math.random() * randomPages.length)];
+              window.location.href = randomPage;
+          });
+      });
+  };
+
   do {
     // Generate random positions based on the full possible range
     randomX = Math.floor(Math.random() * (maxX + 201)) - 200;
@@ -45,7 +64,7 @@ function setRandomPosition(element) {
   element.style.position = "absolute";
   element.style.left = `${randomX}px`;
   element.style.top = `${randomY}px`;
-}
+
 
 
 function distance(x1, y1, x2, y2) {
@@ -93,5 +112,3 @@ const posY = viewportHeight - diagramHeight;
 diagramImg.style.position = "absolute";
 diagramImg.style.left = posX + "px";
 diagramImg.style.top = posY + "px";
-
-
