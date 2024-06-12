@@ -121,3 +121,7 @@ video {
     z-index: 9999; /* Ensure the image stays on top of other content */
     transform: translate(-5px, -5px); /* Move the SVG up and to the left */
 }
+.centered-text a {
+  color: black; /* Set the color of the arrows to black */
+  text-decoration: none; /* Remove underline from the arrows */
+}
