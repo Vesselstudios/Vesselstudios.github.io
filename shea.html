@@ -69,10 +69,11 @@
 </head>
 <body>
     <div class="centered-text">
-        <a class="non-link">&lt;</a> <!-- Replace 'about.html' with the path to your about page -->
-        <a href="about.html" class="non-link">about</a> <!-- Replace 'about.html' with the path to your about page -->
-        <a class="non-link"> &gt;</a> <!-- Replace 'about.html' with the path to your about page -->
-    </div>
+        <a href="#" id="random-page-link-left">&lt;</a> <!-- Left arrow to navigate to a random page -->
+       <a href="about.html" class="non-link">about</a> <!-- Link to the about page -->
+          <a href="#" id="random-page-link-right">&gt;</a> <!-- Right arrow to navigate to a random page -->
+      </div>
+      <script src="scriptnavigation.js"></script>
     <main>
         <!-- Background Video or Image -->
         <video autoplay loop muted id="background-video">
@@ -85,6 +86,5 @@
             <p></p>
         </div>
     </main>
-    <script src="scriptnavigation.js"></script> <!-- Link to your JavaScript file for interactivity -->
 </body>
 </html>
